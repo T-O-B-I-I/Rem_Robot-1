@@ -296,7 +296,7 @@ def info(update: Update, context: CallbackContext):
     text += f"\n┣|• Userlink: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "┣|• \nPresence: <code>{}</code>"
+        _stext = "\n┣|• Presence: <code>{}</code>"
 
         afk_st = is_user_afk(user.id)
         if afk_st:
@@ -312,8 +312,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]. [<a href='https://t.me/Black_Knights_Union/33'>?</a>]"
-
+        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]. 
     try:
         spamwtc = sw.get_ban(int(user.id))
         if spamwtc:
@@ -348,7 +347,39 @@ def info(update: Update, context: CallbackContext):
          disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/Black_Knights_Union/35">?</a>]'.format(
+        text += ' [<a href="Rem bot access levels we call as "Disaster Levels"
+
+• Half Elf's 
+
+Developers who can access the bots server and can execute, modify bot code. Can also manage other Disasters
+
+
+• Divine Dragon
+
+Only one exists, bot owner. 
+Divine dragon has complete bot access, including bot admin-ship in chats Rem is at.
+
+
+• Oni
+
+Also called as Sudos super user access, can gban, manage disasters lower than them and are admins in Rem.
+
+
+• Reincarnated Human
+
+Also known as Support users, reincarnated humans have access to globally ban users across Rem.
+
+
+• Wild Beasts
+
+Wild beasts are fully immune to mute, ban, kicks etc.
+
+
+
+Disclaimer: 
+
+The disaster levels in Rem are there for troubleshooting, support, banning potential scammers.
+Report abuse or ask us more on these at @Rem_Support.">?</a>]'.format(
             bot.username,
         )
 
@@ -372,6 +403,12 @@ def info(update: Update, context: CallbackContext):
             mod_info = mod.__user_info__(user.id, chat.id).strip()
         if mod_info:
             text += "\n\n" + mod_info
+buttons = [
+
+    [
+        InlineKeyboardButton(text="HEALTH",url=f"https://t.me/Rem_updates/31"),
+    ],
+]
 
     if INFOPIC:
         try:
